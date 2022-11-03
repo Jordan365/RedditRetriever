@@ -1,13 +1,21 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import Store from './Store/Store.js'
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App/App';
+import App from './Components/App/App';
 import reportWebVitals from './Testing/reportWebVitals';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMagnifyingGlass);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
